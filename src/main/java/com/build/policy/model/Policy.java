@@ -11,6 +11,8 @@ public class Policy {
     @Id
     private String id;
     private Long number;
+    private String licencePlate;
+    private Double price;
     private LocalDate initalDate;
     private LocalDate finalDate;
     private Customer customer;
@@ -71,5 +73,21 @@ public class Policy {
 
     public void setDaysToExpire(int daysToExpire) {
         this.daysToExpire = daysToExpire;
+    }
+
+    public String getLicencePlate() {
+        return licencePlate;
+    }
+
+    public void setLicencePlate(String licencePlate) {
+        this.licencePlate = licencePlate;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

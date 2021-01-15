@@ -1,6 +1,7 @@
 package com.build.policy.dto;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
@@ -17,6 +18,13 @@ public class CreatePolicyRequest {
 
     @NotEmpty(message = "Customer id cannot be empty")
     private String customerId;
+
+    @NotEmpty(message = "Licence plate cannot be empty")
+    private String licencePlate;
+
+    @NotEmpty(message = "Price cannot be empty")
+    @NumberFormat
+    private Double price;
 
     public CreatePolicyRequest() {}
 
@@ -42,5 +50,21 @@ public class CreatePolicyRequest {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public String getLicencePlate() {
+        return licencePlate;
+    }
+
+    public void setLicencePlate(String licencePlate) {
+        this.licencePlate = licencePlate;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

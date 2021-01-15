@@ -18,6 +18,8 @@ public class BuildPolicyService {
         policy.setFinalDate(createPolicy.getFinalDate());
         policy.setInitalDate(createPolicy.getInitalDate());
         policy.setNumber(policyNumber);
+        policy.setLicencePlate(createPolicy.getLicencePlate());
+        policy.setPrice(createPolicy.getPrice());
         policy.setHasExpired(this.hasExpired(createPolicy.getFinalDate()));
         policy.setDaysToExpire(this.calculeDaysToExpire(createPolicy.getFinalDate()));
 
@@ -30,6 +32,8 @@ public class BuildPolicyService {
         updatedPolicy.setInitalDate(updatePolicyRequest.getInitalDate());
         updatedPolicy.setFinalDate(updatePolicyRequest.getFinalDate());
         updatedPolicy.setCustomer(customer);
+        policy.setLicencePlate(updatePolicyRequest.getLicencePlate());
+        policy.setPrice(updatePolicyRequest.getPrice());
         updatedPolicy.setHasExpired(this.hasExpired(updatePolicyRequest.getFinalDate()));
         updatedPolicy.setDaysToExpire(this.calculeDaysToExpire(updatePolicyRequest.getFinalDate()));
 
